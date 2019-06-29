@@ -1,0 +1,13 @@
+<launch>
+	<!-- joy -->
+	<node respawn="true" pkg="joy" type="joy_node" name="pioneer_joy">
+		<param name="dev" type="string" value="/dev/input/js0"/>
+	</node>
+
+	<!-- Axes -->
+	<param name="axis_linear" value="1" type="int"/>
+	<param name="axis_angular" value="0" type="int"/>
+	<param name="scale_linear" value="2" type="double"/>
+	<param name="scale_angular" value="2" type="double"/>
+	<node pkg="gamepad_operation" type="pioneer_teleoperation" name="teleop"/>
+</launch>
